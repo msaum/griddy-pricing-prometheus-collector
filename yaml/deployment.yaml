@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: griddy-collector-deployment
+  labels:
+    app: griddy-pricing-prometheus-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: griddy-pricing-prometheus-collector
+  template:
+    metadata:
+      labels:
+        app: griddy-pricing-prometheus-collector
+    spec:
+      containers:
+        - name: griddy-pricing-prometheus-collector
+          image: msaum/griddy-pricing-prometheus-collector:latest
+          ports:
+            - containerPort: 3000
+
