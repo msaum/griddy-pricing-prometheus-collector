@@ -1,0 +1,7 @@
+.idea/
+.venv/
+yaml/
+index.html
+docker_build.sh
+docker_run.sh
+local_run.sh
